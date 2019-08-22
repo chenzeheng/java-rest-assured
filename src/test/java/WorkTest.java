@@ -2,6 +2,7 @@ import io.restassured.RestAssured;
 import static io.restassured.RestAssured.*;
 
 import io.restassured.http.ContentType;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -13,7 +14,7 @@ public class WorkTest {
     public static void beforeClass(){
         RestAssured.useRelaxedHTTPSValidation();
     }
-    @Test
+    @Before
     public void getToken() {
         //企业ID：wwd78e4e604f9002cb
         //Secret:kAL65OFp-oW7aeF9VYALW_L2LA8cqddykNMpsWf6SAw
