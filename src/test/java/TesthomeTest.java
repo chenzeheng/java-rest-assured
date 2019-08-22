@@ -44,4 +44,13 @@ public class TesthomeTest {
                     .body("topics.size()",equalTo(20))
                     .body("topics.findAll {it.title.contains('性能数据')}.title[0]",equalTo("想请问一下目前 android 和 ios 的 app 性能数据是怎么收集的，android 的内存是 dumpsys 还是 top 方式，ios 的怎么通过命令方式获取性能数据呢？"));
     }
+    @Test
+    public void auth2(){
+        given().auth().oauth2("177bccce1dcbdbe547ca458e89f2a9f54abdd885")
+                .when().get("https://api.github.com/user/public_emails").prettyPeek()
+                .then()
+                .statusCode(200);
+
+    }
+
 }
